@@ -7,9 +7,9 @@
 Install Nodejs,npm and mongodb <br/>
 change current directory to the project directory<br/>
 ```
-npm install <br/>
-mongod /<br/>
-node app.js <br/>
+npm install 
+mongod 
+node app.js
 ```
 project will start and enter localhost:3000 in web browser.<br/>
 
