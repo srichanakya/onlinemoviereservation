@@ -4,15 +4,15 @@
 ## how to execute the project
 ### After cloning this project follow below steps
 
-Install Nodejs,npm and mongodb
-change current directory to the project directory
-enter 'npm install' //which will install all dependencies
-open new terminal and enter 'mongod' //which will start mongodb server
-In project directory terminal enter ' node app.js '
-project will start and enter localhost:3000 in web browser.
+Install Nodejs,npm and mongodb <br/>
+change current directory to the project directory<br/>
+enter 'npm install' //which will install all dependencies<br/>
+open new terminal and enter 'mongod' //which will start mongodb server<br/>
+In project directory terminal enter ' node app.js '<br/>
+project will start and enter localhost:3000 in web browser.<br/>
 
 
-This is my 3rd semester acadamic project. In this project i replicated online movie reservsation system using web technologies such as HTML, CSS, JAVASCRIPT, NODEJS, MONGODB
+This is my 3rd semester acadamic project. In this project i replicated online movie reservsation system using web technologies such as HTML, CSS, JAVASCRIPT, NODEJS, MONGODB<br/><br/>
 ![Screenshot 2023-08-04 at 2 12 32 PM](https://github.com/srichanakya/onlinemoviereservation/assets/31926762/3d19c03f-354e-4e71-9397-8d79a78b604d)
 ![Screenshot 2023-08-04 at 2 12 38 PM](https://github.com/srichanakya/onlinemoviereservation/assets/31926762/0e7bd7b2-e709-499b-9358-e5a047b09ccb)
 ![Screenshot 2023-08-04 at 2 12 43 PM](https://github.com/srichanakya/onlinemoviereservation/assets/31926762/d572c2e7-b646-49c1-8572-a364a807b57b)
