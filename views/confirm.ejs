@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Movie Confirmed</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<style type="text/css">
+		.payment
+		{
+			position: absolute;
+			top: 75%;
+			right: 10%;
+			font-size: 20px;
+		}
+		h1
+		{
+			color: #D2FF6C;
+		}
+		.container1
+		{
+
+			width: 80%;
+			margin-left: 10%;
+			position: absolute;
+			top: 10%;
+			border-radius: 2px;
+
+		}
+		.seats
+		{
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+
+
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;"">
+  <a class="navbar-brand" href="/"><i class="fas fa-ticket-alt"></i> BookMyTicket</a>
+  <ul class="nav justify-content-end">
+ <%if(!currentuser){%>
+  <li class="nav-item">
+    <a class="nav-link font-weight-normal" href="/login">Login</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link font-weight-normal " href="/register">Register</a>
+  </li>
+<%}else{%>
+   <li class="nav-item">
+    <a class="nav-link font-weight-normal " href="/">Login as : <%=currentuser.name%></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link font-weight-normal " href="/logout">logout</a>
+  </li>
+<%}%>
+  
+</ul>
+</nav>
+
+
+
+
+<div class="container1">
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4 text-success"> Hello <%= currentuser.name%>,</h1>
+    <h1 class="display-4 text-success"> your Movie Confirmed</h1><br><br>
+    <h2>Movie : <%=movieconfirm.mtitle%></h2>
+    <br>
+    <h3 class="seats"><i class="fas fa-couch">  </i> <%=moviedetails.seatno%></h3>
+    <img src="Macintosh HD⁩/Users⁩/srichanakyachowdary⁩/Desktop⁩/onlinemovietickets⁩/⁨public⁩/kgf.jpg" class="qr">
+    <h3 class="payment">Total : <i class="fas fa-rupee-sign"></i> <%=moviedetails.payment%></h3>
+    <!-- <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p> -->
+  </div>
+</div>
+</div>
+
+
+<!-- <script type="text/javascript">
+	async function mysms(x,y,z){
+	const way2sms = require('way2sms');
+	var text = "Dear Customer, Your Movie "+z+" successfully booked.Your seats "+x+" booked. Total Amount "+y;
+ 	cookie = await way2sms.login('9492657850', 'prateesh'); 
+	await way2sms.send(cookie, req.user.phone, text); 
+	}
+</script> -->
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</body>
+</html>

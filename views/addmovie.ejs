@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add New Movie</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css">
+	<style type="text/css">
+		.container1
+		{
+			width: 50%;
+			margin-left: 25%;
+			position: absolute;
+			top: 10%;
+		}
+	</style>
+</head>
+<body>
+
+
+<div class="container1">
+  <form class="ui form" action="/addMovie" method="POST">
+  <h4 class="ui dividing header">Add New Movie</h4>
+
+
+  <div class="field">
+    <label>Movie Details</label>
+    <input type="text" name="title" placeholder="Title">
+  </div>
+
+
+  <div class="field">
+    <div class="two fields">
+      <div class="field">
+        <input type="text" name="rating" placeholder="rating">
+      </div>
+      <div class="field">
+        <input type="text" name="language" placeholder="language">
+      </div>
+    </div>
+  </div>
+
+
+<div class="field">
+    <div class="two fields">
+      <div class="field">
+        <input type="text" name="duration" placeholder="Duration">
+      </div>
+      <div class="field">
+        <input type="text" name="release" placeholder="Release Date">
+      </div>
+    </div>
+  </div>
+
+
+<!-- cast -->
+
+  <div class="field">
+    <div class="two fields">
+      <div class="field">
+        <input type="text" name="hero" placeholder="Actor">
+      </div>
+      <div class="field">
+        <input type="text" name="heroine" placeholder="Actress">
+      </div>
+    </div>
+  </div>
+  <div class="field">
+    <div class="two fields">
+      <div class="field">
+        <input type="text" name="director" placeholder="Director">
+      </div>
+      <div class="field">
+        <input type="text" name="music" placeholder="Music">
+      </div>
+    </div>
+  </div>
+
+<div class="field">
+    <label>Movie poster</label>
+    <input type="text" name="poster" placeholder="Movie Poster" required="required">
+  </div>
+
+<button class="ui button" type="submit">Add Movie</button>
+</form>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</body>
+</html>

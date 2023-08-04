@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Movie Name</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<style type="text/css">
+		.img1
+		{
+			width: 100vw;
+			height: 60vh;
+		}
+		.img2
+		{
+			position: absolute;
+			top: 40vh;	
+			left: 5vw;	
+			width: 20vw;
+			height: 50vh;
+		}
+		.title
+		{
+			position: absolute;
+			top: 60vh;
+			z-index: 1;
+			left:27vw;
+			font-size: 2em;
+		}
+		.pos1{
+			position: absolute;
+			left: 30vw;
+			top: 70vh;
+		}
+		.pos2
+		{
+			position: absolute;
+			left: 30vw;
+			top: 75vh;
+		}
+		.cast{
+			position: absolute;
+			top: 82vh;
+			left: 35vw;
+		}
+		h3{
+			display: block;
+			font-size: 20px;
+		}
+		.btn1{
+			position: absolute;
+			top: 75vh;
+			right: 10vw;
+		}
+	</style>
+</head>
+<body>
+
+
+
+	 <nav class="navbar navbar-light" style="background-color: #e3f2fd;"">
+  <a class="navbar-brand" href="/"><i class="fas fa-ticket-alt"></i> BookMyTicket</a>
+  <ul class="nav justify-content-end">
+ <%if(!currentuser){%>
+  <li class="nav-item">
+    <a class="nav-link font-weight-normal" href="/login">Login</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link font-weight-normal " href="/register">Register</a>
+  </li>
+<%}else{%>
+   <li class="nav-item">
+    <a class="nav-link font-weight-normal " href="/">Login as : <%=currentuser.name%></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link font-weight-normal " href="/logout">logout</a>
+  </li>
+<%}%>
+  
+</ul>
+</nav>
+
+
+
+
+
+<div class="wall">
+   <img src="<%=moviedetails.poster%>" class="img1">
+ </div>
+ 
+<img src="<%=moviedetails.poster%>" alt="..." class="img-thumbnail img2">
+
+
+<h2 class="title"><%=moviedetails.mtitle%></h2>
+
+<p class="pos1">Rating : <%=moviedetails.rating%></p><p class="pos2">Duration : <%=moviedetails.duration%> min</p>
+
+
+<div class="cast">
+	<h2>Cast</h2>
+	<h3>Hero    : <%=moviedetails.hero%></h3>
+	<h3>Heroine : <%=moviedetails.heroine%></h3>
+	<h3>Director:<%=moviedetails.director%></h3>
+	<h3>Music   :<%=moviedetails.music%></h3>
+</div>
+
+<a href="/book/<%=moviedetails._id%>" class="btn btn-outline-success btn1">Book Tickets</a>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	
+
+<style type="text/css">
+	.container1
+	{
+		width: 60%;
+		margin-left: 20%;
+		position: absolute;
+		top: 25%;
+	}
+	button{
+		width: 50%;
+		margin-left: 25%;
+	}
+	body{
+		background-color: white;
+	}
+</style>
+</head>
+<body>
+
+
+ <nav class="navbar navbar-light" style="background-color: #e3f2fd;"">
+  <a class="navbar-brand" href="/"><i class="fas fa-ticket-alt"></i> BookMyTicket</a>
+  <ul class="nav justify-content-end">
+ 
+  <li class="nav-item">
+    <a class="nav-link font-weight-normal" href="/login">Login</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link font-weight-normal " href="/register">Register</a>
+  </li>
+  
+</ul>
+</nav>
+
+
+<div class="container1">
+	
+<div class="ui placeholder segment">
+  <div class="ui two column very relaxed stackable grid">
+    <div class="column">
+      <form class="ui form" action="/login" method="POST">
+  <div class="field">
+    <label>Username</label>
+    <input type="text" name="username" placeholder="Username">
+  </div>
+  <div class="field">
+    <label>Password</label>
+    <input type="password" name="password" placeholder="Password">
+  </div>
+  
+  <button class="ui inverted primary button"" type="submit">Login</button>
+</form>
+    </div>
+   
+    <div class="middle aligned column">
+      <a href="/register"><div class="ui inverted green button">
+        <i class="signup icon"></i>
+        Sign Up
+      </div></a>
+    </div>
+  </div>
+  <div class="ui vertical divider">
+    Or
+  </div>
+</div>
+</div>
+
+</body>
+</html>

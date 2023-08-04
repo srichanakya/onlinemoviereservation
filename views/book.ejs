@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Book</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<style type="text/css">
+		html
+		{
+			width: 100%;
+			height: 100%;
+		}
+		body{
+			background-image: url(back.jpg);
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		.container{
+			margin-top: 4%;
+			width: 90%;
+			height: 60%;
+			margin-left: 5%;
+			float: left;
+		}
+		.seating
+		{
+			margin-top:0;
+			height: 60vh;
+			width: 60vw;
+			/*border: 1px solid green;*/
+			border-radius: 5px;
+			padding: 25px;
+		}
+		.price p
+		{
+			top: 30%;
+			left: 900px;
+			width: 20vw;
+			height: 50vh;
+			position: absolute;
+			right: 2%;
+			border: 1px solid black;
+		}
+		
+		.unava {
+			
+			background-color: gray;
+			width: 40px;
+		}
+		input{
+			width: 250px;
+
+
+		}
+		.seats{
+			width: 49%;
+			float: left;
+			border: 1px solid blue;
+			height: 150px;
+			margin-top: 30px;
+		}
+		#sseat{
+			border: 1px solid green;
+			width: 40px;
+		}
+		.ava
+		{
+			cursor: pointer;
+			border: 1px solid green;
+			background: none;
+			width: 40px;
+		}
+		.ava:hover{
+			background-color: green;
+		}
+		p
+		{
+			position: absolute;
+			bottom: 40px;
+			left: 400px
+
+		}
+		#payment
+		{
+			margin-top: 10px;
+			margin-bottom: 30px;
+			padding: 10px;
+			border: none;
+		}
+		#seatno{
+			margin-top: 10px;
+			margin-bottom: 50px;
+			padding: 10px;
+			border: none;
+		}
+		.cart{
+			position: absolute;
+			left: 900px;
+			height: 40%;
+			top: 250px;
+			width: 25%;
+			/*border: 1px solid green;*/
+		}
+		button{
+			width: 100px;
+			padding: 7px;
+			margin-left: 170px;
+			font-weight: bolder;
+			font-size: 12px;
+		}
+		.movieDetails{
+			width: 50%;
+			margin-left: 15%;
+			margin-top: 5%;
+		}
+	</style>
+</head>
+<body>
+
+	 <nav class="navbar navbar-light" style="background-color: #e3f2fd;"">
+  <a class="navbar-brand" href="/"><i class="fas fa-ticket-alt"></i> BookMyTicket</a>
+  <ul class="nav justify-content-end">
+ <%if(!currentuser){%>
+  <li class="nav-item">
+    <a class="nav-link font-weight-normal" href="/login">Login</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link font-weight-normal " href="/register">Register</a>
+  </li>
+<%}else{%>
+   <li class="nav-item">
+    <a class="nav-link font-weight-normal " href="/">Login as : <%=currentuser.name%></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link font-weight-normal " href="/logout">logout</a>
+  </li>
+<%}%>
+  
+</ul>
+</nav>
+
+<div class="movieDetails">
+	<h3><%=currentmovie.title%></h3>
+</div>
+
+<div class="container">
+	
+	<div class="seating">
+		<h4>Executive - Rs150</h4>
+		<table>
+			<tr><td><input class="ava" type="button" value="A1" id="s1" name="" onclick="selectseat1(id)" ondblclick="unselect(id)"></td>
+				<td><input class="ava" type="button" value="A2" id="s2" name="" onclick="selectseat1(id)" ondblclick="unselect(id)"></td>
+				<td><input class="ava" type="button" value="A3" id="s3" name="" onclick="selectseat1(id)" ondblclick="unselect(id)"></td>
+				<td><input class="ava" type="button" value="A4" id="s4" name="" onclick="selectseat1(id)" ondblclick="unselect(id)"></td>
+				<td><input class="ava" type="button" value="A5" id="s5" name="" onclick="selectseat1(id)" ondblclick="unselect(id)"></td>
+				<td><input class="ava" type="button" value="A6" id="s6" name="" onclick="selectseat1(id)" ondblclick="unselect(id)"></td>
+				<td><input class="ava" type="button" value="A7" id="s7" name="" onclick="selectseat1(id)" ondblclick="unselect(id)"></td>
+				<td><input class="ava" type="button" value="A8" id="s8" name="" onclick="selectseat1(id)" ondblclick="unselect(id)"></td>
+				<td><input class="ava" type="button" value="A9" id="s9" name="" onclick="selectseat1(id)" ondblclick="unselect(id)"></td>
+				<td><input class="ava" type="button" value="A10" id="s10" name="" onclick="selectseat1(id)" ondblclick="unselect(id)"></td>
+				<td><input class="ava" type="button" value="A11" id="s11" name="" onclick="selectseat1(id)" ondblclick="unselect(id)"></td>
+				<td><input class="ava" type="button" value="A12" id="s12" name="" onclick="selectseat1(id)" ondblclick="unselect(id)"></td>
+				<td><input class="ava" type="button" value="A13" id="s13" name="" onclick="selectseat1(id)" ondblclick="unselect(id)"></td>
+				<td><input class="ava" type="button" value="A14" id="s14" name="" onclick="selectseat1(id)" ondblclick="unselect(id)"></td>
+				<td><input class="ava" type="button" value="A15" id="s15" name="" onclick="selectseat1(id)" ondblclick="unselect(id)"></td>
+				<td><input class="ava" type="button" id="sseat" value="A16" name="" onclick="selectseat1(id)" ondblclick="unselect(id)"></td>
+			</tr>
+
+
+
+			<tr><td><input class="unava" type="button" value="B1" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="B2" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="B3" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="B4" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="B5" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="B6" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="B7" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="B8" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="B9" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="B10" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="B11" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="B12" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="B13" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="B14" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="B15" name="" onclick="selectseat()"></td>
+
+			</tr>
+
+
+			<tr><td><input class="unava" type="button" value="C1" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="C2" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="C3" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="C4" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="C5" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="C6" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="C7" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="C8" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="C9" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="C10" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="C11" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="C12" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="C13" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="C14" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="C15" name="" onclick="selectseat()"></td>
+
+			</tr>
+
+
+		<tr><td><input class="unava" type="button" value="D1" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="D2" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="D3" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="D4" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="D5" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="D6" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="D7" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="D8" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="D9" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="D10" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="D11" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="D12" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="D13" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="D14" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="D15" name="" onclick="selectseat()"></td>
+
+			</tr>
+
+
+
+		<tr><td><input class="unava" type="button" value="E1" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="E2" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="E3" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="E4" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="E5" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="E6" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="E7" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="E8" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="E9" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="E10" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="E11" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="E12" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="E13" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="E14" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="E15" name="" onclick="selectseat()"></td>
+
+			</tr>
+
+</table>
+<br><br>
+<table>
+
+		<tr><td><input class="unava" type="button" value="F1" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="F2" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="F3" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="F4" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="F5" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="F6" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="F7" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="F8" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="F9" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="F10" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="F11" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="F12" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="F13" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="F14" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="F15" name="" onclick="selectseat()"></td>
+
+			</tr>
+
+
+		<tr><td><input class="unava" type="button" value="G1" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="G2" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="G3" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="G4" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="G5" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="G6" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="G7" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="G8" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="G9" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="G10" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="G11" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="G12" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="G13" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="G14" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="G15" name="" onclick="selectseat()"></td>
+
+			</tr>
+
+
+
+		<tr><td><input class="unava" type="button" value="H1" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="H2" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="H3" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="H4" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="H5" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="H6" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="H7" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="H8" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="H9" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="H10" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="H11" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="H12" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="H13" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="H14" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="H15" name="" onclick="selectseat()"></td>
+
+			</tr>
+
+
+		<tr><td><input class="unava" type="button" value="I1" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="I2" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="I3" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="I4" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="I5" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="I6" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="I7" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="I8" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="I9" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="I10" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="I11" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="I12" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="I13" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="I14" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="I15" name="" onclick="selectseat()"></td>
+
+			</tr>
+
+
+
+		<tr><td><input class="unava" type="button" value="J1" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="J2" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="J3" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="J4" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="J5" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="J6" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="J7" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="J8" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="J9" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="J10" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="J11" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="J12" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="J13" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="J14" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="J15" name="" onclick="selectseat()"></td>
+
+			</tr>
+
+
+		<tr><td><input class="unava" type="button" value="K1" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="K2" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="K3" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="K4" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="K5" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="K6" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="K7" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="K8" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="K9" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="K10" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="K11" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="K12" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="K13" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="K14" name="" onclick="selectseat()"></td>
+				<td><input class="unava" type="button" value="K15" name="" onclick="selectseat()"></td>
+
+			</tr>
+
+			
+		</table>
+		<p>Screen this way</p>
+		
+	</div>
+	<div class="price">
+		<div class="cart">
+			<form action="/book/confirm/<%=currentmovie._id%>" method="POST">
+		<label>Seats</label>
+		<div >
+			<input type="text" id="seatno" name="seat">
+		</div>
+		<label>Total</label>
+		<div >
+			<input type="text" id="payment" name="amount">
+		</div>
+		<button>book</button>
+		</div>
+		</form>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+	 var a=0;
+	 var seats=[];
+		function selectseat1(x)
+		{	
+			document.getElementById(x).style.backgroundColor="green";
+			seats.push(document.getElementById(x).value);
+			let unique = [...new Set(seats)];
+			document.getElementById('seatno').value =  unique.sort()+",";	
+			
+			
+			a = unique.length * 150;
+
+			costFunction(a);
+			
+		}
+
+		function costFunction(a)
+		{
+		document.getElementById('payment').value = eval(a) ;
+		}
+		function unselect(x)
+		{
+			seats.pop();
+			seats.pop();
+			seats.pop();
+			alert(seats);
+			let unique = [...new Set(seats)];
+			document.getElementById('seatno').value = unique.sort();
+			document.getElementById(x).style.background="none";
+			a = unique.length*150;
+			costFunction(a);
+		}
+	
+</script>
+</body>
+</html>
